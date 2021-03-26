@@ -1,13 +1,167 @@
-<div class="page">
-    <mat-card class="book-section" cdkDropList id="book" #bookList="cdkDropList" [cdkDropListData]="book"
-        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
-        <app-picture cdkDrag *ngFor="let picture of book" [picture]="picture"></app-picture>
+<div>
+    <span class="container">
+        <div id="flipbook" class="flipbook">
+            <div class="cover ">
+                <div class="title-container cover-color">
+                    <img src="../assets/11-Book-Cover.jpg">
+                    <div class="titles">
+                        <p class="cover-title">ISOLAD-X</p>
+                        <p class="cover-subtitle">Monte sua própia<br> quarentena</p>
+                    </div>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                        <div class="open-book">
+                            <p>Abra o livro aqui</p>
+                        </div>
+                    </span>
+                </div>
+
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <app-description></app-description>
+                <span class="info-back">
+                    <mat-icon class="arrow-backwards">south_west</mat-icon>
+                </span>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <div class="page-container">
+                    <mat-card class="book-section" cdkDropList #page1List="cdkDropList" [cdkDropListData]="page1"
+                        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
+                        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of page1" [picture]="picture">
+                        </app-picture>
+                    </mat-card>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <app-description></app-description>
+                <span class="info-back">
+                    <mat-icon class="arrow-backwards">south_west</mat-icon>
+                </span>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <div class="page-container">
+                    <mat-card class="book-section" cdkDropList #page2List="cdkDropList" [cdkDropListData]="page2"
+                        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
+                        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of page2" [picture]="picture">
+                        </app-picture>
+                    </mat-card>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <app-description></app-description>
+                <span class="info-back">
+                    <mat-icon class="arrow-backwards">south_west</mat-icon>
+                </span>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <div class="page-container">
+                    <mat-card class="book-section" cdkDropList #page3List="cdkDropList" [cdkDropListData]="page3"
+                        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
+                        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of page3" [picture]="picture">
+                        </app-picture>
+                    </mat-card>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <app-description></app-description>
+                <span class="info-back">
+                    <mat-icon class="arrow-backwards">south_west</mat-icon>
+                </span>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <div class="page-container">
+                    <mat-card class="book-section" cdkDropList #page4List="cdkDropList" [cdkDropListData]="page4"
+                        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
+                        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of page4" [picture]="picture">
+                        </app-picture>
+                    </mat-card>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                    </span>
+                </div>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <app-description></app-description>
+                <span class="info-back">
+                    <mat-icon class="arrow-backwards">south_west</mat-icon>
+                </span>
+            </div>
+            <div class="page">
+                <img src="../assets/texture.jpg">
+                <div class="page-container">
+                    <mat-card class="book-section" cdkDropList #page5List="cdkDropList" [cdkDropListData]="page5"
+                        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[selectedList]">
+                        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of page5" [picture]="picture">
+                        </app-picture>
+                    </mat-card>
+                    <span class="info">
+                        <mat-icon class="arrow-forward">south_east</mat-icon>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </span>
+
+    <div class="separator">
+
+    </div>
+    <mat-card class="selection" id='selectedList' cdkDropList #selectedList="cdkDropList" [cdkDropListData]="selected"
+        (cdkDropListDropped)="drop($event)" cdkDropListOrientation="horizontal"
+        [cdkDropListConnectedTo]="[page1List,page2List,page3List,page4List,page5List]">
+        <app-picture class="book-pictures" cdkDrag *ngFor="let picture of selected" [picture]="picture"></app-picture>
     </mat-card>
-    <mat-card class="selection" cdkDropList id="selected" #selectedList="cdkDropList" [cdkDropListData]="selected"
-        (cdkDropListDropped)="drop($event)" [cdkDropListConnectedTo]="[bookList]">
-        <app-picture cdkDrag *ngFor="let picture of selected" [picture]="picture"></app-picture>
-    </mat-card>
-    <button (click)="pauseAudio()">PLAY/PAUSE</button>
-    <button (click)="playNextAudio()">Play selected</button>
-    <button (click)="logArrays()">Log arrays</button>
+    <div class="button-container">
+        <div class="within-container">
+            <button *ngIf="audio.paused" (click)="playPauseAudio(); openLightBox()" [disabled]="active">
+                <mat-icon>play_circle_outline</mat-icon>
+            </button>
+            <button *ngIf="!audio.paused" (click)="playPauseAudio()">
+                <mat-icon>pause_circle_outline</mat-icon>
+            </button>
+            <button (click)="clearSelected()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+<div #lightbox id="lightbox" class="lightbox">
+    <div class="close-container">
+        <button class="close" (click)="closeLightBox(); playPauseAudio()">
+            <mat-icon>highlight_off</mat-icon>
+        </button>
+    </div>
+    <div class="modal-content">
+        <div #slides [@browsing]="isSelected[i] ? 'selected' : 'unselected'" class="mySlides"
+            *ngFor="let picture of selected; let i = index">
+            <app-picture [picture]="picture"></app-picture>
+        </div>
+        <!-- Next/previous controls -->
+        <!-- Thumbnail image controls -->
+        <span #thumbnails class="thumbnail-container">
+            <div class="column" *ngFor="let picture of selected; let i = index">
+                <app-picture name="dots" [@browsing]="isSelected[i] ? 'selected' : 'unselected'"
+                    class="demo book-pictures" [picture]="picture"></app-picture>
+            </div>
+        </span>
+    </div>
 </div>

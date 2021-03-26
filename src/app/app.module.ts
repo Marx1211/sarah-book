@@ -9,11 +9,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatCardModule } from '@angular/material/card';
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage'
 import { environment } from 'src/environments/environment';
+import { DescriptionComponent } from './components/description/description.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PictureComponent
+    PictureComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { environment } from 'src/environments/environment';
     DragDropModule,
     MatCardModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

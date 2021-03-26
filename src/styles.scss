@@ -1,4 +1,21 @@
+// VARIABLES
+$bg_color: #d4c87c8c;
+$page_color: #e4c25d;
+$selected_color: #75817796;
+$close_color: #c24829;
+$cover_color: #c27f29;
+
+
+
+
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $bg_color;
+}

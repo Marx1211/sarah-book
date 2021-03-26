@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sarah-book-1aa05": {
+      "hosting": {
+        "sarah-book": [
+          "sarah-book-1aa05"
+        ]
+      }
+    }
+  }
+}

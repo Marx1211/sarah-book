@@ -1,0 +1,22 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    .book-section {
+        display: flex;
+        flex-direction: column;
+        flex: 8;
+        background-color: rgba(222, 184, 135, 0.3);
+        min-height: 300px;
+    }
+    .selection {
+        display: flex;
+        flex-direction: row;
+        flex: 2;
+        background-color: rgba(106, 217, 231, 0.3);
+        min-height: 300px;
+    }
+    button {
+        width: 200px;
+        height: 90px;
+    }
+}
